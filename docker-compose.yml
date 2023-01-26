@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  app:
+    container_name: sir-soir-groupe3
+    image: sir-soir-groupe3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - dbpostgresql
+  dbpostgresql:
+    container_name: sir-groupe3-db
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+    volumes:
+      - ./wallet-db-data/:/var/lib/postgresql/data
+
+
