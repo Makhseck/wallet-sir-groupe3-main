@@ -5,4 +5,4 @@ VOLUME /sir-soir-data
 ADD target/sir2022-0.0.1-SNAPSHOT.jar groupe3.jar
 EXPOSE 8082
 #java -jar
-ENTRYPOINT ["java", "-jar", "/groupe3.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=local", "-jar", "/groupe3.jar"]
