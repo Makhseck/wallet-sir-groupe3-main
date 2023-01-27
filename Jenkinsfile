@@ -32,12 +32,12 @@ pipeline{
                                            bat 'docker push sirsoir2022/sir-soir-groupe3:latest'
                                                    }
                                            }
+ stage('Deploy to Kubernetes') {
+                                steps{
+                                     bat 'kubectl apply -f deploymentServices.yml'
+                                }
+                     }
 
-            stage('Deploy to Kubernetes') {
-                                       steps{
-                                                       bat 'kubectl apply -f deploymentServices.yml'
-                                                  }
-                                       }
 
     }
 
