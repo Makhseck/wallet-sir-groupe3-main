@@ -1,0 +1,19 @@
+apiVersion : applications/v1
+genre : Déploiement
+métadonnées :
+  nom : sir-soir-groupe3-deploiement
+spécification :
+  répliques : 2
+  sélecteur :
+    matchLabels :
+      application : sir-soir-groupe3
+  modèle :
+    métadonnées :
+      étiquettes :
+        application : sir-soir-groupe3
+    spécification :
+      conteneurs :
+        - nom : groupe3
+          image : sirsoir2022/sir-soir:v0
+          ports :
+            - port conteneur : 8080
